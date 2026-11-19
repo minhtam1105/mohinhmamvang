@@ -1,0 +1,75 @@
+
+<script type="module"
+src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+</script>
+
+<div class="mam-scene">
+
+  <model-viewer
+    id="mamModel"
+    src="https://minhtam1105.github.io/mohinhmamvang/mam.glb"
+    camera-controls
+    auto-rotate
+    rotation-per-second="12deg"
+    shadow-intensity="1"
+    tone-mapping="neutral"
+    exposure="1"
+    camera-orbit="0deg 75deg 105%"
+    interaction-prompt="auto"
+    loading="eager">
+  </model-viewer>
+
+  <div class="rotate-hint">
+    <span>↔</span> KÉO ĐỂ XOAY · CUỘN ĐỂ PHÓNG TO
+  </div>
+
+</div>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.mam-scene {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+
+  background-image:
+    url("https://minhtam1105.github.io/mohinhmamvang/background.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mam-scene model-viewer {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+
+  --poster-color: transparent;
+}
+
+.rotate-hint {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 12px 24px;
+  border-radius: 40px;
+
+  background: rgba(85, 53, 36, 0.68);
+  color: #fff;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+
+  pointer-events: none;
+}
+
+</style>
