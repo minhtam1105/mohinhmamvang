@@ -1,75 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script type="module"
 src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
 </script>
 
-<div class="mam-scene">
-
-  <model-viewer
-    id="mamModel"
-    src="https://minhtam1105.github.io/mohinhmamvang/mam.glb"
-    camera-controls
-    auto-rotate
-    rotation-per-second="12deg"
-    shadow-intensity="1"
-    tone-mapping="neutral"
-    exposure="1"
-    camera-orbit="0deg 75deg 105%"
-    interaction-prompt="auto"
-    loading="eager">
-  </model-viewer>
-
-  <div class="rotate-hint">
-    <span>↔</span> KÉO ĐỂ XOAY · CUỘN ĐỂ PHÓNG TO
-  </div>
-
-</div>
-
 <style>
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  overflow: hidden;
 }
 
 .mam-scene {
   position: relative;
   width: 100%;
-  height: 650px;
+  height: 100vh;
+  min-height: 500px;
   overflow: hidden;
 
-  background-image:
-    url("https://minhtam1105.github.io/mohinhmamvang/background.png");
+  background-image: url(
+    "https://minhtam1105.github.io/mohinhmamvang/58a35655-4e21-4cd1-9e70-410d81edee08.png"
+  );
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.mam-scene model-viewer {
+model-viewer {
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background: transparent;
 
   --poster-color: transparent;
 }
 
-.rotate-hint {
+.hint {
   position: absolute;
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
 
   padding: 12px 24px;
-  border-radius: 40px;
+  border-radius: 30px;
 
-  background: rgba(85, 53, 36, 0.68);
-  color: #fff;
+  background: rgba(85, 53, 36, 0.7);
+  color: white;
 
   font-family: Arial, sans-serif;
   font-size: 13px;
-  letter-spacing: 0.5px;
   white-space: nowrap;
 
   pointer-events: none;
 }
 
+@media (max-width: 600px) {
+  .mam-scene {
+    height: 600px;
+  }
+
+  .hint {
+    font-size: 11px;
+  }
+}
 </style>
+</head>
+
+<body>
+
+<div class="mam-scene">
+
+  <model-viewer
+    src="https://minhtam1105.github.io/mohinhmamvang/tripo_convert_97f55304-c274-42ca-a542-a0e8d2c14b96.glb"
+
+    camera-controls
+    auto-rotate
+    rotation-per-second="12deg"
+
+    shadow-intensity="1"
+    tone-mapping="neutral"
+    exposure="1"
+
+    camera-orbit="0deg 75deg 105%"
+    interaction-prompt="auto"
+
+    loading="eager">
+  </model-viewer>
+
+  <div class="hint">
+    ↔ KÉO ĐỂ XOAY · CUỘN ĐỂ PHÓNG TO
+  </div>
+
+</div>
+
+</body>
+</html>
